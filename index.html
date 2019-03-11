@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Help me App</title>
+
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<!-- loads all issues from the Local Storage, generates the HTML output for the issues list and attaches the output to the DOM -->
+
+<body onload="fetchIssues()">
+    <div class="container">
+        <!-- <h1>helpMe( )</h1> -->
+        <img src="./helpmeLogo.png" height=200/>
+        <div class="jumbotron">
+            <h3>Send A Request:</h3>
+            <form id="issueInputForm">
+                <div class="form-group">
+                    <label for="issuesDescInput">First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <label for="issuesDescInput">Phone Number</label>
+                    <input type="text" class="form-control" id="phoneNumber" placeholder="+10000000000">
+                </div>
+                <div class="form-group">
+                    <label for="issueDescInput">Urgency</label>
+                    <select class="form-control" id="issueSeverityInput">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="issueDescInput">Message</label>
+                    <input type="text" class="form-control" id="messageBody"
+                        placeholder="Enter message here">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send Text</button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- this allows us to generate the HTML code for the issues with JS and then place the results within this element -->
+                <div id="issuesList"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <!-- <img src="https://static.giantbomb.com/uploads/scale_small/0/26/9976-koolaidman.jpg" /> -->
+            <p>&copy helpMe( ),inc. </p>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- small js library to generate unique identifiers -->
+    <script src="http://chancejs.com/chance.min.js"></script>
+
+    <!-- bootstrap & jquery for styling user interface -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <!-- our js file -->
+    <script src="main.js"></script>
+</body>
+
+</html>
